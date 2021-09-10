@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Post New Smile</h1>
+
+    {% if form %}
+
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div>
+                <!--Displays the form item for the post's `title`.--> 
+                {{ form.title.label }}<br>
+                {{ form.title(class="formtitle") }}<br>
+                <!-- TODO: (milestone 1) Display the error messages of the `title` field validator (if there are any validation errors).   -->  
+
+                <!-- TODO: (milestone1) Include the form item for the post's `body`. Apply appropriate styling for the `body`form  item.  -->  
+
+                <!-- TODO: (milestone 1) Display the error messages of the `body` field validator (if there are any validation errors).   -->  
+            </div>
+            
+            <!-- TODO: (milestone1) Include the form item for `happiness_level` selection. Apply appropriate styling for the `happiness_level` form item.  -->  
+
+            <!-- TODO: (milestone2) Include the form item for `tag` selection.   -->  
+
+            {{ form.submit(class="button") }}
+        </form>
+    {% endif %}
+
+
+  {% endblock %}

@@ -1,0 +1,57 @@
+<table class = "posttable" style = "width:100%" valign="top">
+        <tr> 
+            <td colspan="3"><div class="posttitle"> {{post.title}} </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" >
+                <!--  (milestone1) TODO: include happiness-level image according to the `cost`s happiness_level .
+                For example : <img src="{{ url_for('static', filename = 'img//happiness-level-1.png' )}}"-->  
+
+            </td>
+
+            <td width="80%" >
+                <div>
+                  <!-- (milestone1) TODO: include post body -->    
+               </div>
+               <div> 
+                  <!-- (milestone3) TODO: format the timestamp; display as local date/time-->
+                  Posted at: {{ post.timestamp }}
+               </div> 
+            </td> 
+
+            <td width = "5%"> 
+                <div>
+                    <!-- (milestone1)  TODO: add "like" button
+                                       Define an HTML `post` form with a submit button. The form action should redirect to `routes.like` route.
+                                       Style the submit button using `likebtn` CCS class selector. -->
+                                       
+                    <br>
+                    <!-- (milestone1) TODO: include the likes count-->
+                    
+                </div>
+                <br> 
+                 <!-- (milestone3) TODO: if the post is posted by the logged in user, include the "delete" button.  
+                                   Define an HTML `post` form with a submit button. The form action should redirect to `routes.deletepost` route.
+                                   Style the submit button using `button` CCS class selector. -->
+
+            </td>
+        </tr>
+        
+        <tr> 
+            <td colspan="3" style = "text-align:center" valign="bottom">  
+                <br>
+                <!-- (milestone2) TODO: include all the tags associated with the post-->
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style = "text-align:center" valign="bottom">  
+                <br>
+                  <!-- (milestone3) TODO: include username who posted the post-->
+
+              </td>
+            </tr>
+        </tr>
+    </table>
