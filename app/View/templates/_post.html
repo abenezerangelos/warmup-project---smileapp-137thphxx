@@ -7,11 +7,11 @@
             <td width="10%" >
                 <!--  (milestone1) TODO: include happiness-level image according to the `cost`s happiness_level .
                 For example : <img src="{{ url_for('static', filename = 'img//happiness-level-1.png' )}}"-->  
-                {% if happiness_level == 1 %}
+                {% if post.happiness_level == 1 %}
                    <img src="{{ url_for('static', filename = 'img//happiness-level-1.png' )}}" width="40">
-                {% elif happiness_level == 2 %}
+                {% elif post.happiness_level == 2 %}
                    <img src="{{ url_for('static', filename = 'img//happiness-level-2.png' )}}" width="40">
-                {% elif happiness_level == 3 %}
+                {% elif post.happiness_level == 3 %}
                    <img src="{{ url_for('static', filename = 'img//happiness-level-3.png' )}}" width="40">
                 {% else %}
                    <img src="{{ url_for('static', filename = 'img//like.png' )}}" width="40">
@@ -41,11 +41,12 @@
                     <script>
                         function count_console() 
                         {
-                            for (i = 0; i < like; i++) 
+                            for (i = 0; i < post.like; i++) 
                             {
                                 console.count();
                             }
                         }
+                        <h1> console.count() </h1>
                      </script>
                     
                 </div>

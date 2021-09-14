@@ -17,3 +17,8 @@ bp_routes.template_folder = Config.TEMPLATE_FOLDER #'..\\View\\templates'
 def index():
     posts = Post.query.order_by(Post.timestamp.desc())
     return render_template('index.html', title="Smile Portal", posts=posts.all())
+
+@bp_routes.route('/postsmile', methods=['GET','POST'])
+def postsmile():
+    PostForm = PostForm.query.order_by(Post.timestamp.desc())
+    return render_template('create.html', title = "Post Smile" ,PostForm=PostForm.all())

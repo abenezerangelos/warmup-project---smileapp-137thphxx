@@ -15,8 +15,10 @@
                 <!-- TODO: (milestone 1) Display the error messages of the `title` field validator (if there are any validation errors).   -->  
 
                 <!-- TODO: (milestone1) Include the form item for the post's `body`. Apply appropriate styling for the `body`form  item.  -->  
-
-                <!-- TODO: (milestone 1) Display the error messages of the `body` field validator (if there are any validation errors).   -->  
+                {{ form.body.label }}<br>
+                {{ form.body(class="formbody") }}<br>
+                <!-- TODO: (milestone 1) Display the error messages of the `body` field validator (if there are any validation errors).   --> 
+                
             </div>
             
             <!-- TODO: (milestone1) Include the form item for `happiness_level` selection. Apply appropriate styling for the `happiness_level` form item.  -->  
