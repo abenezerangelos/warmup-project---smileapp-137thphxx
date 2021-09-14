@@ -12,8 +12,8 @@ bp_routes = Blueprint('routes', __name__)
 bp_routes.template_folder = Config.TEMPLATE_FOLDER #'..\\View\\templates'
 
 
-@bp_routes.route('/', methods=['GET'])
-@bp_routes.route('/index', methods=['GET'])
+@bp_routes.route('/', methods=['GET','POST'])
+@bp_routes.route('/index', methods=['GET','POST'])
 def index():
     posts = Post.query.order_by(Post.timestamp.desc())
     return render_template('index.html', title="Smile Portal", posts=posts.all())

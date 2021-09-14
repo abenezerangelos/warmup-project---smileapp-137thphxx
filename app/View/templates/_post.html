@@ -7,12 +7,22 @@
             <td width="10%" >
                 <!--  (milestone1) TODO: include happiness-level image according to the `cost`s happiness_level .
                 For example : <img src="{{ url_for('static', filename = 'img//happiness-level-1.png' )}}"-->  
-
+                {% if happiness_level == 1 %}
+                   <img src="{{ url_for('static', filename = 'img//happiness-level-1.png' )}}" width="40">
+                {% elif happiness_level == 2 %}
+                   <img src="{{ url_for('static', filename = 'img//happiness-level-2.png' )}}" width="40">
+                {% elif happiness_level == 3 %}
+                   <img src="{{ url_for('static', filename = 'img//happiness-level-3.png' )}}" width="40">
+                {% else %}
+                   <img src="{{ url_for('static', filename = 'img//like.png' )}}" width="40">
+                {% endif %}  
+                
             </td>
 
             <td width="80%" >
                 <div>
-                  <!-- (milestone1) TODO: include post body -->    
+                  <!-- (milestone1) TODO: include post body -->   
+                  Posted at: {{ post.body }}
                </div>
                <div> 
                   <!-- (milestone3) TODO: format the timestamp; display as local date/time-->
@@ -28,6 +38,15 @@
                                        
                     <br>
                     <!-- (milestone1) TODO: include the likes count-->
+                    <script>
+                        function count_console() 
+                        {
+                            for (i = 0; i < like; i++) 
+                            {
+                                console.count();
+                            }
+                        }
+                     </script>
                     
                 </div>
                 <br> 

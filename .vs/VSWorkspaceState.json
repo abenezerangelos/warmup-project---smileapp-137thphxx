@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\tests"
+    "\\app",
+    "\\app\\Controller",
+    "\\app\\Model",
+    "\\app\\View",
+    "\\app\\View\\static",
+    "\\app\\View\\static\\css",
+    "\\app\\View\\static\\img",
+    "\\app\\View\\templates",
+    "\\app\\__pycache__"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\smile.py",
   "PreviewInSolutionExplorer": false
 }
