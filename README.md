@@ -1,3 +1,3 @@
 # Name: Peilin.Wu
 # Major: Computer Science
-# Class: Cpts 222
+# Class: Cpts 322

@@ -22,9 +22,9 @@ def index():
 def postsmile():
     pForm = PostForm()
     if pForm.validate_on_submit():
-        newpForm = Post(title= pform.title.data, body=pform.body.data, timestamp=pform.timestamp.data, likes=pform.likes.data, happiness_level=pform.happiness_level.data)
+        newpForm = Post(title= pForm.title.data, body=pForm.body.data, timestamp=pForm.timestamp.data, likes=pForm.likes.data, happiness_level=pForm.happiness_level.data)
         db.session.add(newpForm)
         db.session.commit()
         flash('Congratulations, you are now post new smile!')
-        return redirect(url_for('index'))
-    return render_template('create.html',pForm=PostForm)
+        return redirect(url_for('postsmile'))
+    return render_template('create.html',form = pForm)
