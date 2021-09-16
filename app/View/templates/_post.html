@@ -20,35 +20,40 @@
             </td>
 
             <td width="80%" >
-                <div>
+                <div class ="postmessage">
                   <!-- (milestone1) TODO: include post body -->   
                   Posted at: {{ post.body }}
                </div>
-               <div> 
+               <div class ="posttimestamp"> 
                   <!-- (milestone3) TODO: format the timestamp; display as local date/time-->
-                  Posted at: {{ post.timestamp }}
+                  Posted at: {{post.timestamp}}
                </div> 
             </td> 
 
             <td width = "5%"> 
-                <div>
+                <div class="likecount">
                     <!-- (milestone1)  TODO: add "like" button
-                                       Define an HTML `post` form with a submit button. The form action should redirect to `routes.like` route.
-                                       Style the submit button using `likebtn` CCS class selector. -->
-                                       
+                       Define an HTML `post` form with a submit button. The form action should redirect to `routes.like` route.
+                       Style the submit button using `likebtn` CCS class selector. -->
+                    <form action="/" method="post">
+                        <button>
+                            <img src="{{ url_for('static', filename = 'img//like.png' )}}" width="40">
+                        </button>
+                    </form>
+
                     <br>
                     <!-- (milestone1) TODO: include the likes count-->
                     <script>
-                        function count_console() 
+                        function count_console()
                         {
-                            for (i = 0; i < post.like; i++) 
-                            {
-                                console.count();
-                            }
+                        for (i = 0; i < post.like; i++)
+                        {
+                        console.count();
+                        }
                         }
                         <h1> console.count() </h1>
-                     </script>
-                    
+                    </script>
+
                 </div>
                 <br> 
                  <!-- (milestone3) TODO: if the post is posted by the logged in user, include the "delete" button.  

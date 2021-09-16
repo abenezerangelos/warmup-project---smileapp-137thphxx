@@ -8,7 +8,7 @@
 
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        <div>
+        <div class="formtitle">
             <!--Displays the form item for the post's `title`.-->
             {{ form.title.label }}<br>
             {{ form.title(class="formtitle") }}<br>
@@ -17,7 +17,8 @@
             {% for error in form.title.errors %}
             <span style="color: red;">[{{ erro }}]</span>
             {% endfor %}
-
+        </div>
+        <div class="formbody">
             <!-- TODO: (milestone1) Include the form item for the post's `body`. Apply appropriate styling for the `body`form  item.  -->
             {{ form.body.label }}<br>
             {{ form.body(class="formbody") }}<br>
@@ -26,14 +27,17 @@
             {% for error in form.body.errors %}
             <span style="color: red;">[{{ erro }}]</span>
             {% endfor %}
+
         </div>
 
-        <!-- TODO: (milestone1) Include the form item for `happiness_level` selection. Apply appropriate styling for the `happiness_level` form item.  -->
-        {{ form.happiness_level.label}}<br>
-        {{ form.happiness_level(class = "happiness_level")}}
-
+        <div class="formselect">
+            <!-- TODO: (milestone1) Include the form item for `happiness_level` selection. Apply appropriate styling for the `happiness_level` form item.  -->
+            {{ form.happiness_level.label}}<br>
+            {{ form.happiness_level(class = "happiness_level")}}
+            {{ form.submit(class="button") }}
+        </div>
         <!-- TODO: (milestone2) Include the form item for `tag` selection.   -->
-        {{ form.submit(class="button") }}
+        
     </form>
     {% endif %}
 

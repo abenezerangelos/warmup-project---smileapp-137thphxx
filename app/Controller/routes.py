@@ -28,3 +28,5 @@ def postsmile():
         flash('Congratulations, you are now post new smile!')
         return redirect(url_for('postsmile'))
     return render_template('create.html',form = pForm)
+
+@bp_routes.route('/like/<post_id>', methods=['POST'])

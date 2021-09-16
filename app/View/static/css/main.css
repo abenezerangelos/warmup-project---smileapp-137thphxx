@@ -3,8 +3,8 @@ body {
     padding: 1px;
     font-family: Tahoma;
     text-align: left;
-  
 }
+
 .nav-container {
     background:#f6f6f6;
     font-family: Tahoma;
@@ -12,12 +12,22 @@ body {
     height: 32px;
     text-transform: uppercase;
 }
+
+.flash-container {
+    background: center;
+    height: auto;
+    font: bold;
+    font-size: medium;
+    padding: initial;
+    margin: 1px 1px 1px 15px;
+}
+
 a:hover {
-	color:#2387D9;
+    color: #2387D9;
 }
 
 .button {
-    width : 65px;
+    width : 55px;
     padding : 3px;    
     font-size: 16px;
     margin : 5px;
@@ -38,13 +48,29 @@ a:hover {
 .posttitle {
     text-align: center;
     font-weight: bold;
+    font-style: normal;
+    padding: 10px;
 }
 
-.useritem{
+.postmessage {
+    text-align: left;
+    font-weight: normal;
+    font-style: normal;
+    padding: 8px;
+}
+
+.posttimestamp {
+    text-align: left;
+    font-weight: normal;
+    font-style:italic;
+    padding: 4px;
+}
+
+.useritem {
     text-align: center;
     padding: 3px;
     margin: 4px 3px 4px 3px;
-    color: crimson; 
+    color: crimson;
     text-transform: uppercase;
 }
 
@@ -60,8 +86,35 @@ a:hover {
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
-} 
+}
+
+.likecount {
+    text-align: center;
+    font-weight: bold;
+}
+
 .likebtn:hover {
     background-image: url("..//img//like_hover.png");
-    cursor:pointer;
+    cursor: pointer;
+}
+
+.formtitle {
+    width: 555px;
+    padding: 3px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.formbody {
+    width: 555px;
+    padding: 3px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.formselect {
+    width: 555px;
+    padding: 3px;
+    font-size: 16px;
+    margin: 5px;
 }
