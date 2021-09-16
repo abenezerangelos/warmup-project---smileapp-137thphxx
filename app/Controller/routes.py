@@ -30,3 +30,10 @@ def postsmile():
     return render_template('create.html',form = pForm)
 
 @bp_routes.route('/like/<post_id>', methods=['POST'])
+def post_id():
+    count = Post.likes.data()
+    count.set(count.get() + 1)
+    return redirect(url_for('routes.index'))
+    
+    
+
