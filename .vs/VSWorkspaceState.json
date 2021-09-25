@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Controller",
     "\\app\\Model",
+    "\\app\\Model\\__pycache__",
     "\\app\\View",
     "\\app\\View\\static",
     "\\app\\View\\static\\css",
     "\\app\\View\\static\\img",
     "\\app\\View\\templates",
-    "\\app\\__pycache__"
+    "\\app\\__pycache__",
+    "\\tests"
   ],
-  "SelectedNode": "\\smile.py",
+  "SelectedNode": "\\app\\View\\templates\\index.html",
   "PreviewInSolutionExplorer": false
 }

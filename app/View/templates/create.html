@@ -33,10 +33,15 @@
         <div class="formselect">
             <!-- TODO: (milestone1) Include the form item for `happiness_level` selection. Apply appropriate styling for the `happiness_level` form item.  -->
             {{ form.happiness_level.label}}<br>
-            {{ form.happiness_level(class = "happiness_level")}}
+            {{ form.happiness_level(class = "happiness_level")}}<br>
         </div>
         <!-- TODO: (milestone2) Include the form item for `tag` selection.   -->
+       
+        {{ form.tag.label}}<br>
+        {{ form.tag(class = "tag")}}<br>
+
         {{ form.submit(class="button") }}
+        
     </form>
     {% endif %}
 

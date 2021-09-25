@@ -16,13 +16,14 @@ bp_routes.template_folder = Config.TEMPLATE_FOLDER #'..\\View\\templates'
 @bp_routes.route('/index', methods=['GET','POST'])
 def index():
     posts = Post.query.order_by(Post.timestamp.desc())
-    return render_template('index.html', title="Smile Portal", posts=posts.all())
+    return render_template('index.html', title="Smile Portal", posts=posts.all(), postcount = posts.count())
 
 @bp_routes.route('/postsmile', methods=['GET','POST'])
 def postsmile():
     pForm = PostForm()
     if pForm.validate_on_submit():
         newpForm = Post(title= pForm.title.data, body=pForm.body.data, timestamp=pForm.timestamp.data, likes=pForm.likes.data, happiness_level=pForm.happiness_level.data)
+        print(pForm.tag.data)
         db.session.add(newpForm)
         db.session.commit()
         flash('Congratulations, you are now post new smile!')
@@ -34,6 +35,7 @@ def post_id():
     count = Post.likes.data()
     count.set(count.get() + 1)
     return redirect(url_for('routes.index'))
+
     
     
 

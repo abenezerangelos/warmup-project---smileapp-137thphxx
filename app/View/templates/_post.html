@@ -43,7 +43,7 @@
         Style the submit button using `likebtn` CCS class selector. -->
                     <br>
                     <!-- (milestone1) TODO: include the likes count-->
-                    {{post.likes}}
+                    Posted at: {{post.likes}}
                 </div>
 
                 <br>
@@ -55,10 +55,12 @@
         </tr>
         
         <tr> 
-            <td colspan="3" style = "text-align:center" valign="bottom">  
+            <td colspan="3" style="text-align:center" valign="bottom">
                 <br>
                 <!-- (milestone2) TODO: include all the tags associated with the post-->
-
+                <div class="tagitem">
+                    Posted at: {{post.get_tags().all()}}
+                </div>
             </td>
         </tr>
 
