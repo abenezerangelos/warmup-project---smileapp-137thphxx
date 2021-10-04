@@ -30,5 +30,5 @@ class Tag(db.Model):
     name = db.Column(db.String(20))
 
     def __repr__(self):
-        rep = 'Person(' + self.id + ',' + self.name + ')'
+        rep = 'Person(' + str(self.id) + ',' + self.name + ')'
         return rep
