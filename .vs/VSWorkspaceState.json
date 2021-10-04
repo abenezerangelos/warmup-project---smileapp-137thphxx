@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Model",
-    "\\app\\Model\\__pycache__",
+    "\\app\\Controller",
     "\\app\\View",
     "\\app\\View\\static",
     "\\app\\View\\static\\css",
@@ -12,6 +11,6 @@
     "\\app\\__pycache__",
     "\\tests"
   ],
-  "SelectedNode": "\\app\\View\\templates\\index.html",
+  "SelectedNode": "\\app\\Controller\\routes.py",
   "PreviewInSolutionExplorer": false
 }
