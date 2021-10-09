@@ -6,7 +6,7 @@ from config import Config
 from sqlalchemy import desc
 
 from app import db
-from app.Model.models import Post
+from app.Model.models import Post, User
 from app.Controller.forms import PostForm
 
 bp_routes = Blueprint('routes', __name__)
@@ -37,6 +37,5 @@ def post_id():
     count.set(count.get() + 1)
     return redirect(url_for('routes.index'))
 
-    
     
 

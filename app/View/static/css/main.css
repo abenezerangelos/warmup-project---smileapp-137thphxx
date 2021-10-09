@@ -153,3 +153,10 @@ a:hover {
         width: 99%;
     }
 }
+
+.forminput {
+    width:auto;
+    padding: 3px;
+    margin: 2px;
+    padding: 5px;
+}
