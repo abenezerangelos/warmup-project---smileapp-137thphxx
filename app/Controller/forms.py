@@ -1,10 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectField, TextAreaField
+from wtforms import StringField, SubmitField, SelectField, TextAreaField, PasswordField
 from wtforms.validators import  DataRequired, Length
 from wtforms_sqlalchemy.fields import QuerySelectMultipleField
 from wtforms.widgets import ListWidget, CheckboxInput
 
-from app.Model.models import Post, Tag
+from app.Model.models import Post, Tag, User
 
 def get_tags():
      return Tag.query.all()
@@ -25,3 +25,6 @@ class PostForm(FlaskForm):
 class SortForm(FlaskForm):
     Choices = SelectField(choices = [(4,'Happiness level'),(3,'Date'), (2, 'Title'), (1,'of likes')])
     Submit = SubmitField('Refresh')
+
+
+    

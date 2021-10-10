@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Register</h1>
+    <h1> Register </h1>
         {% if form %}
             <form action="" method="POST">
         
@@ -13,8 +13,6 @@
                 <span style="color: red;">[{{error}}]</span>
                 {% endfor %}
 
-
-                {{form.hidden_tag() }}
                 <p> {{form.email.label}}</p>
                 <p> {{form.email(class = 'textinput')}}</p>
 
@@ -22,8 +20,6 @@
                 <span style="color: red;">[{{error}}]</span>
                 {% endfor %}
 
-
-                {{form.hidden_tag() }}
                 <p> {{form.password.label}}</p>
                 <p> {{form.password(class = 'textinput')}}</p>
 
@@ -31,8 +27,6 @@
                 <span style="color: red;">[{{error}}]</span>
                 {% endfor %}
 
-
-                {{form.hidden_tag() }}
                 <p> {{form.password2.label}}</p>
                 <p> {{form.password2(class = 'textinput')}}</p>
 
@@ -40,7 +34,7 @@
                 <span style="color: red;">[{{error}}]</span>
                 {% endfor %}
             
-                <p>{{ form.submit(class = 'button')}} </p>
+                <p>{{ form.submit(class ='button')}} </p>
             </form>
         {% endif %}
     <!-- TODO: (milestone 3) Include the template for "user registration" form here..  -->

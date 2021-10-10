@@ -4,6 +4,7 @@ from flask import Blueprint
 from flask import render_template, flash, redirect, url_for, request
 from config import Config
 from sqlalchemy import desc
+from flask_login import current_user, login_required
 
 from app import db
 from app.Model.models import Post, User
@@ -15,11 +16,13 @@ bp_routes.template_folder = Config.TEMPLATE_FOLDER #'..\\View\\templates'
 
 @bp_routes.route('/', methods=['GET','POST'])
 @bp_routes.route('/index', methods=['GET','POST'])
+@login_required
 def index():
     posts = Post.query.order_by(Post.timestamp.desc())
     return render_template('index.html', title="Smile Portal", posts=posts.all(), postcount = posts.count())
 
 @bp_routes.route('/postsmile', methods=['GET','POST'])
+@login_required
 def postsmile():
     pForm = PostForm()
     if pForm.validate_on_submit():
@@ -32,6 +35,7 @@ def postsmile():
     return render_template('create.html',form = pForm)
 
 @bp_routes.route('/like/<post_id>', methods=['POST'])
+@login_required
 def post_id():
     count = Post.likes.data()
     count.set(count.get() + 1)

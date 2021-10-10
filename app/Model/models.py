@@ -4,7 +4,13 @@ from enum import unique
 from werkzeug.security import generate_password_hash, check_password_hash
 #from sqlalchemy import postTags
 #from sqlalchemy.orm import relationship
- 
+from flask_login import UserMixin
+from app import login
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
 postTags = db.Table('postTags',
          db.Column('post_id', db.Integer, db.ForeignKey('post.id')),
          db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'))
@@ -35,7 +41,7 @@ class Tag(db.Model):
         rep = 'Person(' + str(self.id) + ',' + self.name + ')'
         return rep
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique = True)
     email = db.Column(db.String(120), unique = True)
@@ -48,5 +54,5 @@ class User(db.Model):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
-    def get_password(self, password):
+    def check_password(self, password):
         return check_password_hash(self.password_hash, password)

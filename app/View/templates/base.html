@@ -13,14 +13,17 @@
         <div class ="nav-container">
         <table>
             <tr>
-                <td><a href="{{ url_for('routes.index') }}" class = "button">Smiles</a></td>
-                <!-- TODO: (milestone 1) add the URL for the "Post Smile". --> 
-                <td><a href="{{ url_for('routes.postsmile') }}" class = "button"> Post Smile </a></td>
-                <!-- TODO: (milestone 3) add the "Login" or "Logout" link. If the user is logged in, Login link should be displayed, otherwise Logout link should be displayed. --> 
-                <td><a href="" class = "button"> Login </a></td>
-                <td><a href="" class = "button"> Logout </a></td>
+                <td><a href="{{ url_for('routes.index') }}" class="button">Smiles</a></td>
+                <!-- TODO: (milestone 1) add the URL for the "Post Smile". -->
+                <td><a href="{{ url_for('routes.postsmile') }}" class="button"> Post Smile </a></td>
+                <!-- TODO: (milestone 3) add the "Login" or "Logout" link. If the user is logged in, Login link should be displayed, otherwise Logout link should be displayed. -->
+                {% if current_user.is_anonymous %}
+                <td><a href="{{url_for('auth.login')}}" class="button"> Login </a></td>
+                {% else %}
+                <td><a href="{{url_for('auth.logout')}}" class="button"> Logout </a></td>
+                {% endif %}
                 <!-- TODO: (milestone 3) Replace "_______" below with the username of the current user.-->
-                <td> Current user is: <span class="useritem">________ </span> </td>  
+                <td> Current user is: <span class="useritem">{{current_user.username}} </span> </td>
             </tr>
         </table>
         </div>
