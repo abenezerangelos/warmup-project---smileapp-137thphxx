@@ -28,6 +28,7 @@ def postsmile():
     if pForm.validate_on_submit():
         newpForm = Post(title= pForm.title.data, body=pForm.body.data, happiness_level=pForm.happiness_level.data)
         print(pForm.tag.data)
+   
         db.session.add(newpForm)
         db.session.commit()
         flash('Congratulations, you are now post new smile!')

@@ -24,6 +24,7 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     likes = db.Column(db.Integer, default = 0)
     happiness_level = db.Column(db.Integer, default = 3)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
     tags = db.relationship('Tag', secondary = postTags, primaryjoin=(postTags.c.post_id == id), backref=db.backref('postTags', lazy='dynamic'), lazy='dynamic')
@@ -47,6 +48,9 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), unique = True)
     password_hash = db.Column(db.String(128))
 
+    posts = db.relationship('Post', backref = 'writer')
+    
+
     def __repr__(self):
         rep = 'user id (' + str(self.id) + ', username: ' + self.username + ')'
         return rep
@@ -56,3 +60,6 @@ class User(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def get_user_posts(self, posts):
+        return self.posts
